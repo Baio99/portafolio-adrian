@@ -1,0 +1,214 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(26, 26, 46, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  transition: all 0.4s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  will-change: transform, background-color, box-shadow;
+}
+
+.header.scrolled {
+  padding: 0.5rem 0;
+  background-color: rgba(26, 26, 46, 0.92);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.dark-theme .header {
+  background-color: rgba(22, 33, 62, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.dark-theme .header.scrolled {
+  background-color: rgba(22, 33, 62, 0.92);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: padding 0.4s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+}
+
+.header.scrolled .header-container {
+  padding: 0.5rem 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  color: var(--light-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+
+.logo-highlight {
+  color: var(--primary-color);
+  position: relative;
+  /* Efecto adicional opcional, como subrayado o sombra */
+}
+
+
+.logo-text {
+  margin-right: 0.2rem;
+}
+
+.logo-dot {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.desktop-nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+  will-change: transform;
+}
+
+.nav-link {
+  color: var(--light-text);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+}
+
+.nav-underline {
+  position: absolute;
+  bottom: -5px;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-color-light));
+  border-radius: 3px;
+  will-change: transform;
+  box-shadow: 0 1px 6px rgba(var(--primary-color-rgb), 0.4);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.cv-button {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-color-light));
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.25);
+  transition: all 0.3s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+  will-change: transform, box-shadow;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cv-button:hover {
+  box-shadow: 0 6px 16px rgba(var(--primary-color-rgb), 0.35);
+}
+
+/* Estilos mejorados para el botón de modo oscuro */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  will-change: transform, background-color;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle span {
+  font-weight: 500;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.95);
+  letter-spacing: 0.03em;
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .desktop-nav {
+    display: none;
+  }
+  
+  .header-container {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+  }
+  
+  .header.scrolled .header-container {
+    padding: 0.5rem 1rem;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+}

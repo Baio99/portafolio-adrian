@@ -1,0 +1,17 @@
+:root {
+    /* Colores modo claro */
+    --bg-color: #F8F9FA;
+    --text-color: #16213E;
+    --card-bg: #FFFFFF;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --border-color: #E9ECEF;
+    
+    /* Colores modo oscuro */
+    .dark-theme {
+      --bg-color: #1A1A2E;
+      --text-color: #FFFFFF;
+      --card-bg: #16213E;
+      --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      --border-color: #495057;
+    }
+  }
