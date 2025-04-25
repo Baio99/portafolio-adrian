@@ -1,6 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Projects.css';
+import project2 from '../../assets/images/project-2.png';
+
+
+const images = {
+  //1: project1,
+  2: project2,
+  //3: project3
+};
+
 
 const cardVariants = {
   offscreen: {
@@ -20,26 +29,26 @@ const cardVariants = {
 
 const ProjectCard = ({ project }) => {
   return (
-    <motion.div 
+    <motion.div
       className="project-card"
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ margin: "-50px 0px -100px 0px" }} // Margen ajustado
       variants={cardVariants}
-      whileHover={{ 
+      whileHover={{
         y: -5,
         boxShadow: "0 15px 30px -5px rgba(108, 99, 255, 0.3)",
         transition: { type: "spring", stiffness: 300 }
       }}
     >
-      <motion.div 
+      <motion.div
         className="project-image-container"
         whileHover={{ scale: 1.02 }}
         transition={{ type: "spring", stiffness: 200, damping: 10 }}
       >
         <div className="project-image">
-          <motion.img 
-            src={`/assets/images/${project.image}`} 
+          <motion.img
+            src={images[project.id]}
             alt={project.title}
             loading="lazy"
             initial={{ scale: 1 }}
@@ -47,11 +56,11 @@ const ProjectCard = ({ project }) => {
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
           />
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className="project-overlay"
           initial={{ opacity: 0 }}
-          whileHover={{ 
+          whileHover={{
             opacity: 1,
             transition: { duration: 0.3, ease: "easeOut" }
           }}
@@ -63,7 +72,7 @@ const ProjectCard = ({ project }) => {
             rel="noopener noreferrer"
             aria-label={`Ver proyecto ${project.title}`}
             initial={{ scale: 1 }}
-            whileHover={{ 
+            whileHover={{
               scale: 1.05,
               boxShadow: "0 5px 15px rgba(0, 0, 0, 0.3)"
             }}
@@ -74,39 +83,39 @@ const ProjectCard = ({ project }) => {
           </motion.a>
         </motion.div>
       </motion.div>
-      
-      <motion.div 
+
+      <motion.div
         className="project-content"
         initial={{ y: 0 }}
         whileHover={{ y: -3 }}
         transition={{ type: "spring", stiffness: 200 }}
       >
-        <motion.h3 
+        <motion.h3
           className="project-title"
           whileHover={{ color: "var(--primary-dark)" }}
           transition={{ duration: 0.2 }}
         >
           {project.title}
         </motion.h3>
-        
-        <motion.p 
+
+        <motion.p
           className="project-description"
           whileHover={{ scale: 1.005 }}
           transition={{ duration: 0.2 }}
         >
           {project.description}
         </motion.p>
-        
-        <motion.div 
+
+        <motion.div
           className="project-technologies"
-          whileHover={{ 
+          whileHover={{
             scale: 1.01,
             transition: { staggerChildren: 0.05 }
           }}
         >
           {project.technologies.map((tech, index) => (
-            <motion.span 
-              key={index} 
+            <motion.span
+              key={index}
               className="tech-tag"
               initial={{ scale: 1 }}
               whileHover={{
@@ -120,8 +129,8 @@ const ProjectCard = ({ project }) => {
             </motion.span>
           ))}
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="project-links"
           whileHover={{ scale: 1.01 }}
         >
@@ -139,7 +148,7 @@ const ProjectCard = ({ project }) => {
           >
             Ver Proyecto
           </motion.a>
-          
+
           {project.code && (
             <motion.a
               href={project.code}
