@@ -147,8 +147,8 @@ const Header = () => {
 
         <div className="header-right">
           <motion.a
-            href="/CV.pdf"
-            download="AI_CV.pdf"  // Nombre sugerido del archivo descargado
+            href="/portafolio-adrian/CV.pdf"
+            download="IngAdrianIza_CV.pdf"
             className="cv-button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
