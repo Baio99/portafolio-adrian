@@ -146,7 +146,7 @@ const Header = () => {
 
         <div className="header-right">
           <motion.a
-            href="/portafolio-adrian/CV.pdf"
+            href="/portafolio-adrian/CV2025.pdf"
             download="IngAdrianIza_CV.pdf"
             className="cv-button"
             whileHover={{ scale: 1.05 }}
