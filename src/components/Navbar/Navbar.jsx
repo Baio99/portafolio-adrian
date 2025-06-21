@@ -8,6 +8,7 @@ const Navbar = ({ activeSection, isMenuOpen, toggleMenu }) => {
     { id: 'home', label: 'Inicio' },
     { id: 'about', label: 'Sobre mí' },
     { id: 'projects', label: 'Proyectos' },
+    { id: 'certificates', label: 'Certificados' },
     { id: 'contact', label: 'Contacto' }
   ];
 

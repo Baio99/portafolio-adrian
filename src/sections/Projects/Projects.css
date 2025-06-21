@@ -245,3 +245,123 @@
     font-size: 0.8rem;
   }
 }
+
+
+
+
+/* Añade estos estilos al final de tu Projects.css */
+
+/* Estilos del carrusel */
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.project-image:hover .carousel-arrow {
+  opacity: 1;
+}
+
+.carousel-arrow:hover {
+  background-color: white;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+  left: 15px;
+}
+
+.right-arrow {
+  right: 15px;
+}
+
+.carousel-arrow svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Indicadores */
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background-color: white;
+  transform: scale(1.2);
+}
+
+/* Efectos de hover para el carrusel */
+.project-image:hover .indicator {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.project-image:hover .indicator.active {
+  background-color: white;
+  transform: scale(1.3);
+}
+
+/* Transición suave entre imágenes */
+.project-image img {
+  transition: opacity 0.5s ease;
+}
+
+/* Asegurar que el overlay esté encima de las flechas */
+.project-overlay {
+  z-index: 1;
+}
+
+/* Responsive para flechas */
+@media (max-width: 768px) {
+  .carousel-arrow {
+    width: 30px;
+    height: 30px;
+    opacity: 0.8;
+  }
+  
+  .carousel-arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .carousel-indicators {
+    bottom: 10px;
+  }
+}

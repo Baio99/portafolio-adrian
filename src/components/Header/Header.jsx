@@ -9,38 +9,37 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'Inicio' },
-    { id: 'about', label: 'Sobre mí' },
-    { id: 'projects', label: 'Proyectos' },
-    { id: 'contact', label: 'Contacto' }
-  ];
+  { id: 'home', label: 'Inicio' },
+  { id: 'about', label: 'Sobre mí' },
+  { id: 'projects', label: 'Proyectos' },
+  { id: 'certificates', label: 'Certificados' }, // Nueva sección
+  { id: 'contact', label: 'Contacto' }
+];
 
   useEffect(() => {
-    const handleScroll = () => {
-      // Detectar scroll para efecto de reducción
-      setIsScrolled(window.scrollY > 20);
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 20);
 
-      // Detectar sección activa con scrollPosition ajustado
-      const sections = ['home', 'about', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 80; // Ajustado para mejor detección
+    const sections = ['home', 'about', 'projects', 'certificates', 'contact']; // Agregada 'certificates'
+    const scrollPosition = window.scrollY + 80;
 
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
+    for (const section of sections) {
+      const element = document.getElementById(section);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        const offsetHeight = element.offsetHeight;
 
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
+        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+          setActiveSection(section);
+          break;
         }
       }
-    };
+    }
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  window.addEventListener('scroll', handleScroll);
+  return () => window.removeEventListener('scroll', handleScroll);
+}, []);
 
   // Variants para animaciones secuenciales
   const containerVariants = {
@@ -123,7 +122,7 @@ const Header = () => {
                   spy={true}
                   smooth={true}
                   duration={500}
-                  offset={-70}
+                  offset={-75}
                   className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
                 >
                   {item.label}

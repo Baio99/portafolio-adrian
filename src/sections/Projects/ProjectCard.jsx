@@ -1,7 +1,10 @@
-import React from 'react';
+//import React from 'react';
+import React, { useState } from 'react';
+
 import { motion } from 'framer-motion';
 import './Projects.css';
 import project2 from '../../assets/images/project-2.png';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 
 const images = {
@@ -28,12 +31,26 @@ const cardVariants = {
 };
 
 const ProjectCard = ({ project }) => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+    );
+  };
+
   return (
     <motion.div
       className="project-card"
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ margin: "-50px 0px -100px 0px" }} // Margen ajustado
+      viewport={{ margin: "-50px 0px -100px 0px" }}
       variants={cardVariants}
       whileHover={{
         y: -5,
@@ -48,13 +65,54 @@ const ProjectCard = ({ project }) => {
       >
         <div className="project-image">
           <motion.img
-            src={images[project.id]}
-            alt={project.title}
+            src={`/portafolio-adrian/assets/images/${project.images[currentImageIndex]}`}
+            alt={`${project.title} - Imagen ${currentImageIndex + 1}`}
             loading="lazy"
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
           />
+          
+          {/* Flechas de navegación */}
+          {project.images.length > 1 && (
+            <>
+              <button 
+                className="carousel-arrow left-arrow"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
+                aria-label="Imagen anterior"
+              >
+                <FiChevronLeft />
+              </button>
+              <button 
+                className="carousel-arrow right-arrow"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
+                aria-label="Siguiente imagen"
+              >
+                <FiChevronRight />
+              </button>
+              
+              {/* Indicadores de posición */}
+              <div className="carousel-indicators">
+                {project.images.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex(index);
+                    }}
+                    aria-label={`Ir a imagen ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
         </div>
 
         <motion.div

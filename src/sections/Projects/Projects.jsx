@@ -34,7 +34,7 @@ const Projects = () => {
       title: 'Sistema de Gestión Empresarial',
       description: 'Plataforma integral para gestión de recursos empresariales con dashboard analítico en tiempo real y generación de reportes automatizados.',
       technologies: ['Node.js', 'React', 'MongoDB', 'Express', 'Redux'],
-      image: 'project-1.jpg',
+       images: [''], // Cambiado a array
       link: '#',
       code: '#'
     },
@@ -43,18 +43,19 @@ const Projects = () => {
       title: 'Plataforma de Chat en Tiempo Real',
       description: 'Sistema completo de mensajería instantánea con salas de chat, autenticación segura y estado de usuarios en tiempo real. Arquitectura escalable que combina REST API con WebSockets para una experiencia interactiva, implementando Redis para gestión de sesiones y MongoDB para persistencia de datos.',
       technologies: ['Node.js', 'Express', 'Socket.io', 'MongoDB', 'Redis', 'JWT', 'Render (Deploy)', 'HTML/CSS/JS (Frontend)'],
-      image: 'project-2.png',
+       images: ['project-2.png'], // Cambiado a array
       link: 'https://baio99.github.io/BaioChat/',
       code: 'https://github.com/Baio99/Backend-Chat'
     },
     {
       id: 3,
-      title: 'Aplicación Móvil Educativa',
-      description: 'Plataforma de aprendizaje con cursos interactivos, seguimiento de progreso y sistema de gamificación para aumentar el engagement.',
-      technologies: ['React Native', 'Firebase', 'GraphQL', 'Node.js'],
-      image: 'project-3.jpg',
-      link: '#',
-      code: '#'
+      title: 'Sistema de Gestión de Acceso a Laboratorio de Ciberseguridad',
+      description: 'Sistema de gestión de usuarios basado en microservicios que permite el acceso seguro, controlado y escalable a un laboratorio virtual de ciberseguridad. El sistema autentica y autoriza usuarios, gestiona sesiones activas y controla el acceso a entornos vulnerables simulados, diseñados para prácticas educativas, implementado con Node.js y Express.js en el backend, y gestionado bajo la metodología ágil Scrum, El laboratorio se conecta a través de una infraestructura de red con router MikroTik y VPN en Ubuntu Server',
+      technologies: ['Node.js', 'Express.js', 'Vue.js', 'VMware', 'Ubuntu Server', 'MikroTik RouterOS', 'Scrum', 'Microservices Architecture'],
+
+      images: ['Project-3V1.jpg', 'Project-3V2.png', 'Project-3V3.jpg', 'Project-3V4.png'], // Cambiado a array
+      link: 'https://docs.google.com/file/d/1guK6GhCYp5552nmqAfz6kNpXCUXEaOpL/preview?pli=1',
+      code: 'https://github.com/CharlRomero/mcsv-penlab'
     }
   ];
 
