@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/portafolio-adrian/static/css/main.268c7c02.css",
-    "main.js": "/portafolio-adrian/static/js/main.1153760e.js",
+    "main.js": "/portafolio-adrian/static/js/main.d29b73ce.js",
     "static/media/about-photo.jpg": "/portafolio-adrian/static/media/about-photo.20bc325f41d1d2436c11.jpg",
-    "static/media/profile-photo.jpg": "/portafolio-adrian/static/media/profile-photo.ac838614ef2022327875.jpg",
+    "static/media/perfil.png": "/portafolio-adrian/static/media/perfil.87478288181104c6c8d1.png",
     "static/media/project-2.png": "/portafolio-adrian/static/media/project-2.220eae3a1f8507ded5f8.png",
     "static/media/postgresql.svg": "/portafolio-adrian/static/media/postgresql.29aef66790dafa021ec4c36bbd59e370.svg",
     "static/media/mysql.svg": "/portafolio-adrian/static/media/mysql.4c50926040e5a77a27dba211addc08e3.svg",
@@ -15,10 +15,10 @@
     "index.html": "/portafolio-adrian/index.html",
     "static/media/javascript.svg": "/portafolio-adrian/static/media/javascript.b879f838faf1cb951d1c2230fd933a39.svg",
     "main.268c7c02.css.map": "/portafolio-adrian/static/css/main.268c7c02.css.map",
-    "main.1153760e.js.map": "/portafolio-adrian/static/js/main.1153760e.js.map"
+    "main.d29b73ce.js.map": "/portafolio-adrian/static/js/main.d29b73ce.js.map"
   },
   "entrypoints": [
     "static/css/main.268c7c02.css",
-    "static/js/main.1153760e.js"
+    "static/js/main.d29b73ce.js"
   ]
 }
