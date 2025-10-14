@@ -100,6 +100,15 @@ const Certificates = () => {
       category: "Desarrollo Backend",
       date: "2025"
     },
+    {
+      id: 4,
+      title: "Certificado Python for Data Science",
+      image: "/portafolio-adrian/certificados/CertificadoPython.png",
+      description: "Certificado por IBM en Python aplicados a la Ciencia de Datos",
+      link: "https://courses.cognitiveclass.ai/certificates/9599c09ecba740cea350bbe8bf37e317",
+      category: "Análisis de Datos",
+      date: "2025"
+    },
   ];
 
   const openModal = (cert) => {

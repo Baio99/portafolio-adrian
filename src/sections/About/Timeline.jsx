@@ -74,7 +74,7 @@ const Timeline = () => {
       year: '2019-2025',
       title: 'Ingenieria en Software',
       institution: 'Universidad de las Fuerzas Armadas ESPE',
-      description: 'Enfoque en sistemas distribuidos, arquitectura de software y metodologías ágiles'
+      description: 'Enfoque en sistemas distribuidos, arquitectura de software, Análisis de Datos y metodologías ágiles'
     },
   ];
 

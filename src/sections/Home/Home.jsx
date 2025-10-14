@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
 import './Home.css';
-import profilePhoto from '../../assets/images/profile-photo.jpg';
+import profilePhoto from '../../assets/images/perfil.png';
 
 const Home = () => {
   const [text1, setText1] = useState('');
   const [text2, setText2] = useState('');
   const [phase, setPhase] = useState(0); // 0: typing text1, 1: showing both, 2: erasing both
   const fullText1 = "Web Developer";
-  const fullText2 = "Backend Developer";
+  const fullText2 = "Backend Developer & PM";
   const typingSpeed = 100;
   const displayDuration = 2000;
 

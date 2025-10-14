@@ -124,7 +124,8 @@ const About = () => {
                   "Desarrollador Backend, especializado en aplicaciones escalables y de alto rendimiento.",
                   "Desarrollo de soluciones alternativas para optimizar el rendimiento y la escalabilidad.",
                   "Planificación con Scrum para optimizar los flujos de trabajo y mejorar la colaboración en equipo.",
-                  "Diseño de arquitectura de microservicios para mejorar la modularidad y la mantenibilidad del sistema."
+                  "Diseño de arquitectura de microservicios para mejorar la modularidad y la mantenibilidad del sistema.",
+                  "Enfoque al análisis de datos, integrando Python y herramientas del ecosistema para generar valor a partir de la información."
                 ].map((item, i) => (
                   <motion.li 
                     key={i}
