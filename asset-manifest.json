@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/portafolio-adrian/static/css/main.268c7c02.css",
-    "main.js": "/portafolio-adrian/static/js/main.d29b73ce.js",
-    "static/media/about-photo.jpg": "/portafolio-adrian/static/media/about-photo.20bc325f41d1d2436c11.jpg",
+    "main.css": "/portafolio-adrian/static/css/main.25707bff.css",
+    "main.js": "/portafolio-adrian/static/js/main.b37ee45f.js",
     "static/media/perfil.png": "/portafolio-adrian/static/media/perfil.87478288181104c6c8d1.png",
+    "static/media/36.png": "/portafolio-adrian/static/media/36.f9e165434a80ebfdfd44.png",
     "static/media/project-2.png": "/portafolio-adrian/static/media/project-2.220eae3a1f8507ded5f8.png",
     "static/media/postgresql.svg": "/portafolio-adrian/static/media/postgresql.29aef66790dafa021ec4c36bbd59e370.svg",
+    "static/media/sql.svg": "/portafolio-adrian/static/media/sql.cc49d16a1a84655ba77d0f97c774eb4e.svg",
     "static/media/mysql.svg": "/portafolio-adrian/static/media/mysql.4c50926040e5a77a27dba211addc08e3.svg",
     "static/media/nodejs.svg": "/portafolio-adrian/static/media/nodejs.a7647021075b20ebcf315dd54793112d.svg",
     "static/media/typescript.svg": "/portafolio-adrian/static/media/typescript.9ad81d2e09b9cd2265cdb1e55d83a709.svg",
@@ -14,11 +15,11 @@
     "static/media/mongodb.svg": "/portafolio-adrian/static/media/mongodb.bfa6cdd80f4a99232cadb39ebbb976d2.svg",
     "index.html": "/portafolio-adrian/index.html",
     "static/media/javascript.svg": "/portafolio-adrian/static/media/javascript.b879f838faf1cb951d1c2230fd933a39.svg",
-    "main.268c7c02.css.map": "/portafolio-adrian/static/css/main.268c7c02.css.map",
-    "main.d29b73ce.js.map": "/portafolio-adrian/static/js/main.d29b73ce.js.map"
+    "main.25707bff.css.map": "/portafolio-adrian/static/css/main.25707bff.css.map",
+    "main.b37ee45f.js.map": "/portafolio-adrian/static/js/main.b37ee45f.js.map"
   },
   "entrypoints": [
-    "static/css/main.268c7c02.css",
-    "static/js/main.d29b73ce.js"
+    "static/css/main.25707bff.css",
+    "static/js/main.b37ee45f.js"
   ]
 }
