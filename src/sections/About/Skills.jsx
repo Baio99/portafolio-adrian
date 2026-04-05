@@ -9,18 +9,20 @@ import mysqlIcon from '../../assets/images/icons/mysql.svg';
 import postgresqlIcon from '../../assets/images/icons/postgresql.svg';
 import mongodbIcon from '../../assets/images/icons/mongodb.svg';
 import dotnetIcon from '../../assets/images/icons/dotnet.svg';
+import sqlIcon from '../../assets/images/icons/sql.svg';
 
 
 
 const Skills = () => {
   const skills = [
     { name: 'JavaScript', icon: javascriptIcon },
-    { name: 'TypeScript', icon: typescriptIcon },
+    // { name: 'TypeScript', icon: typescriptIcon },
     { name: 'Node.js', icon: nodejsIcon },
     { name: 'Python', icon: pythonIcon },
     { name: 'MySQL', icon: mysqlIcon },
     { name: 'PostgreSQL', icon: postgresqlIcon },
     { name: 'MongoDB', icon: mongodbIcon },
+    { name: 'SQL', icon: sqlIcon },
     { name: '.NET', icon: dotnetIcon }
   ];
 

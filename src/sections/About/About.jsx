@@ -1,10 +1,70 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { motion, useAnimation, useSpring, useTransform } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import './About.css';
 import Skills from './Skills';
 import Timeline from './Timeline';
-import aboutPhoto from '../../assets/images/about-photo.jpg';
+import aboutPhoto from '../../assets/images/36.png';
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0.05,
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 10
+    }
+  }
+};
+
+const valueProps = [
+  {
+    icon: "🏦",
+    title: "Fintech & Sistemas Bursátiles",
+    description: "APIs financieras con ASP.NET en Eurekabank y modernización de plataforma bursátil en la Bolsa de Valores de Quito, migración SOAP legacy a .NET Core con reglas de negocio críticas."
+  },
+  {
+    icon: "⚡",
+    title: "Microservicios & Mensajería Asíncrona",
+    description: "Arquitecturas desacopladas con Node.js y FastAPI. Comunicación vía RabbitMQ, contenerización con Docker y despliegue en Railway."
+  },
+  {
+    icon: "🌐",
+    title: "Full Stack Multiplataforma",
+    description: "Backend en C#/.NET, Node.js y Python. Frontends con Blazor, .NET MAUI y React web, escritorio y móvil desde un solo perfil técnico."
+  },
+  {
+    icon: "🔴",
+    title: "Sistemas en Tiempo Real",
+    description: "WebSockets + Redis + MongoDB para gestión de sesiones y mensajería instantánea. Autenticación segura con JWT y bcrypt."
+  },
+  {
+    icon: "📋",
+    title: "Gestión de Proyectos Técnicos",
+    description: "Liderazgo de equipos con Scrum y Kanban en proyectos reales. Planificación de sprints en Jira, seguimiento en Trello y versionamiento con TFS."
+  }
+];
+
+const stats = [
+  { value: "2+", label: "años de experiencia" },
+  // { value: "4+", label: "proyectos entregados" },
+  { value: "2",  label: "sectores: fintech & tech" }
+];
+
+const tags = ["Full Stack", "Backend", "Fintech", "Microservicios", "DBA"];
 
 const About = () => {
   const controls = useAnimation();
@@ -21,144 +81,107 @@ const About = () => {
     }
   }, [controls, inView]);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.05,
-        delayChildren: 0.08,
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10
-      }
-    }
-  };
-
-  const listItemVariants = {
-    hidden: { x: -20, opacity: 0 },
-    visible: (i) => ({
-      x: 0,
-      opacity: 1,
-      transition: {
-        delay: i * 0.1,
-        type: "spring",
-        stiffness: 120
-      }
-    })
-  };
-
   return (
     <section id="about" className="about-section" ref={ref}>
-      <motion.div 
+      <motion.div
         className="section-header"
         initial="hidden"
         animate={controls}
         variants={containerVariants}
       >
         <motion.h2 variants={itemVariants}>Sobre Mí</motion.h2>
-        <motion.div 
-          className="section-divider"
-          variants={itemVariants}
-        />
+        <motion.div className="section-divider" variants={itemVariants} />
       </motion.div>
-      
+
       <div className="about-container">
-        <motion.div 
+        <motion.div
           className="about-content"
           initial="hidden"
           animate={controls}
           variants={containerVariants}
         >
-          <motion.div 
-            className="about-image"
-            variants={itemVariants}
-          >
-            <motion.img 
-              src={aboutPhoto} 
-              alt="Adrian Iza" 
+          {/* Foto */}
+          <motion.div className="about-image" variants={itemVariants}>
+            <motion.img
+              src={aboutPhoto}
+              alt="Adrian Iza"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{
-                delay: 0.4,
-                type: "spring",
-                stiffness: 100,
-                damping: 10
-              }}
+              transition={{ delay: 0.4, type: "spring", stiffness: 100, damping: 10 }}
               whileHover={{ scale: 1.03 }}
             />
           </motion.div>
-          
-          <motion.div 
-            className="about-text"
-            variants={containerVariants}
-          >
-            <motion.p 
-              className="about-description"
-              variants={itemVariants}
-            >
-              Ingeniero de Software apasionado con una fuerte dedicación a la programación y la resolución 
-              de desafíos complejos. Destaco en organización, priorización de tareas y adaptabilidad en 
-              entornos de trabajo dinámicos. Domino metodologías ágiles como Scrum, lo que garantiza una 
-              gestión eficiente de proyectos y la mejora continua. Siempre con ganas de aprender, innovar 
-              y aprovechar nuevas oportunidades de crecimiento profesional.
-            </motion.p>
-            
-            <motion.div 
-              className="about-contributions"
-              variants={containerVariants}
-            >
-              <motion.h3 variants={itemVariants}>Aportaciones Profesionales</motion.h3>
-              <motion.ul variants={containerVariants}>
-                {[
-                  "Desarrollador Backend, especializado en aplicaciones escalables y de alto rendimiento.",
-                  "Desarrollo de soluciones alternativas para optimizar el rendimiento y la escalabilidad.",
-                  "Planificación con Scrum para optimizar los flujos de trabajo y mejorar la colaboración en equipo.",
-                  "Diseño de arquitectura de microservicios para mejorar la modularidad y la mantenibilidad del sistema.",
-                  "Enfoque al análisis de datos, integrando Python y herramientas del ecosistema para generar valor a partir de la información."
-                ].map((item, i) => (
-                  <motion.li 
-                    key={i}
-                    variants={listItemVariants}
-                    custom={i}
-                    whileHover={{ x: 5 }}
-                  >
-                    {item}
-                  </motion.li>
-                ))}
-              </motion.ul>
-              
-              <motion.h3 variants={itemVariants}>Aportaciones Personales</motion.h3>
-              <motion.ul variants={containerVariants}>
-                {[
-                  "Responsabilidad y compromiso con la excelencia.",
-                  "Adaptabilidad a diversos retos y entornos de trabajo.",
-                  "Esfuerzo y dedicación al aprendizaje continuo y al desarrollo profesional."
-                ].map((item, i) => (
-                  <motion.li 
-                    key={i}
-                    variants={listItemVariants}
-                    custom={i + 4}
-                    whileHover={{ x: 5 }}
-                  >
-                    {item}
-                  </motion.li>
-                ))}
-              </motion.ul>
+
+          {/* Texto principal */}
+          <motion.div className="about-text" variants={containerVariants}>
+
+            {/* Tags de rol */}
+            <motion.div className="about-tags" variants={itemVariants}>
+              {tags.map((tag) => (
+                <span key={tag} className="about-tag">{tag}</span>
+              ))}
             </motion.div>
+
+            {/* Intro concisa */}
+            <motion.p className="about-intro" variants={itemVariants}>
+              {/* Ingeniero en Software con experiencia real en sistemas financieros y de alta disponibilidad.
+              Actualmente modernizando la plataforma bursátil de la <strong>Bolsa de Valores de Quito</strong>,
+              migrando sistemas legacy SOAP a arquitecturas web modernas con .NET Core.
+              Construyo software que funciona bajo presión, en producción, con reglas de negocio críticas. */}
+
+
+              Ingeniero en Software con experiencia en el ámbito empresarial y financiero, desarrollo soluciones de software pensadas para crecer, escalar y generar impacto real en el negocio. Tengo experiencia en entornos exigentes, donde la estabilidad, el rendimiento y la continuidad operativa son críticos. He trabajado en la modernización de sistemas complejos, transformando plataformas legacy en soluciones modernas. Mi enfoque es claro: entregar software sólido, desde sistemas escalables hasta implementaciones enfocadas en resolver problemáticas específicas de forma eficiente.
+
+
+            </motion.p>
+
+            {/* Stats */}
+            <motion.div className="about-stats" variants={containerVariants}>
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={i}
+                  className="about-stat"
+                  variants={itemVariants}
+                  whileHover={{ y: -4, transition: { type: "spring", stiffness: 300 } }}
+                >
+                  <span className="stat-value">{stat.value}</span>
+                  <span className="stat-label">{stat.label}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Value Props */}
+            <motion.div className="about-value-props" variants={containerVariants}>
+              {valueProps.map((prop, i) => (
+                <motion.div
+                  key={i}
+                  className="value-prop"
+                  variants={{
+                    hidden: { x: -20, opacity: 0 },
+                    visible: {
+                      x: 0,
+                      opacity: 1,
+                      transition: {
+                        delay: i * 0.08,
+                        type: "spring",
+                        stiffness: 120
+                      }
+                    }
+                  }}
+                  whileHover={{ x: 6 }}
+                >
+                  <span className="value-prop-icon">{prop.icon}</span>
+                  <div className="value-prop-content">
+                    <strong className="value-prop-title">{prop.title}</strong>
+                    <p className="value-prop-description">{prop.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
           </motion.div>
         </motion.div>
-        
+
         <Skills />
         <Timeline />
       </div>

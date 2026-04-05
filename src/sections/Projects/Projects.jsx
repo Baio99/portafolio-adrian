@@ -31,12 +31,12 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'Sistema de Gestión Empresarial',
-      description: 'Plataforma integral para gestión de recursos empresariales con dashboard analítico en tiempo real y generación de reportes automatizados.',
-      technologies: ['Node.js', 'React', 'MongoDB', 'Express', 'Redux'],
-       images: [''], // Cambiado a array
-      link: '#',
-      code: '#'
+      title: 'Sitema de Comunicación entre Microservicios con RabbitMQ',
+      description: 'Sistema de microservicios desacoplados que utiliza RabbitMQ para la comunicación asíncrona entre servicios.',
+      technologies: ['RabbitMQ', 'Docker', 'MongoDB', 'Railway', 'FastAPI '],
+       images: ['Rabbit1.png', 'Rabbit2.png','Rabbit3.png'], // Cambiado a array
+      link: 'https://github.com/Baio99/UserService',
+      code: 'https://github.com/Baio99/microservices-rabbitmq',
     },
     {
       id: 2,
