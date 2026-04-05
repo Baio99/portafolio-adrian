@@ -34,7 +34,7 @@ const valueProps = [
   {
     icon: "🏦",
     title: "Fintech & Sistemas Bursátiles",
-    description: "APIs financieras con ASP.NET en Eurekabank y modernización de plataforma bursátil en la Bolsa de Valores de Quito, migración SOAP legacy a .NET Core con reglas de negocio críticas."
+    description: "APIs financieras con ASP.NET y modernización de plataforma, migración SOAP legacy a .NET Core con reglas de negocio críticas."
   },
   {
     icon: "⚡",
