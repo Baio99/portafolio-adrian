@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portafolio-adrian/static/css/main.25707bff.css",
-    "main.js": "/portafolio-adrian/static/js/main.d7476cba.js",
+    "main.css": "/portafolio-adrian/static/css/main.ab0956a1.css",
+    "main.js": "/portafolio-adrian/static/js/main.b98d7e3b.js",
     "static/media/perfil.png": "/portafolio-adrian/static/media/perfil.87478288181104c6c8d1.png",
     "static/media/36.png": "/portafolio-adrian/static/media/36.f9e165434a80ebfdfd44.png",
     "static/media/project-2.png": "/portafolio-adrian/static/media/project-2.220eae3a1f8507ded5f8.png",
@@ -9,17 +9,16 @@
     "static/media/sql.svg": "/portafolio-adrian/static/media/sql.cc49d16a1a84655ba77d0f97c774eb4e.svg",
     "static/media/mysql.svg": "/portafolio-adrian/static/media/mysql.4c50926040e5a77a27dba211addc08e3.svg",
     "static/media/nodejs.svg": "/portafolio-adrian/static/media/nodejs.a7647021075b20ebcf315dd54793112d.svg",
-    "static/media/typescript.svg": "/portafolio-adrian/static/media/typescript.9ad81d2e09b9cd2265cdb1e55d83a709.svg",
     "static/media/python.svg": "/portafolio-adrian/static/media/python.e29b80707209fe97c26b2391434c5f96.svg",
     "static/media/dotnet.svg": "/portafolio-adrian/static/media/dotnet.b36a9e60deda6c9a11705e162497fb61.svg",
     "static/media/mongodb.svg": "/portafolio-adrian/static/media/mongodb.bfa6cdd80f4a99232cadb39ebbb976d2.svg",
     "index.html": "/portafolio-adrian/index.html",
     "static/media/javascript.svg": "/portafolio-adrian/static/media/javascript.b879f838faf1cb951d1c2230fd933a39.svg",
-    "main.25707bff.css.map": "/portafolio-adrian/static/css/main.25707bff.css.map",
-    "main.d7476cba.js.map": "/portafolio-adrian/static/js/main.d7476cba.js.map"
+    "main.ab0956a1.css.map": "/portafolio-adrian/static/css/main.ab0956a1.css.map",
+    "main.b98d7e3b.js.map": "/portafolio-adrian/static/js/main.b98d7e3b.js.map"
   },
   "entrypoints": [
-    "static/css/main.25707bff.css",
-    "static/js/main.d7476cba.js"
+    "static/css/main.ab0956a1.css",
+    "static/js/main.b98d7e3b.js"
   ]
 }
