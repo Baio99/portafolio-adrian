@@ -1,55 +1,53 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import './Header.css';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import LanguageToggle from '../LanguageToggle/LanguageToggle';
 
 const Header = () => {
+  const { t } = useTranslation();
   const [activeSection, setActiveSection] = useState('home');
   const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
-  { id: 'home', label: 'Inicio' },
-  { id: 'about', label: 'Sobre mí' },
-  { id: 'projects', label: 'Proyectos' },
-  { id: 'certificates', label: 'Certificados' }, // Nueva sección
-  { id: 'contact', label: 'Contacto' }
-];
+    { id: 'home',         label: t('nav.home') },
+    { id: 'about',        label: t('nav.about') },
+    { id: 'projects',     label: t('nav.projects') },
+    { id: 'certificates', label: t('nav.certificates') },
+    { id: 'contact',      label: t('nav.contact') }
+  ];
 
   useEffect(() => {
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
 
-    const sections = ['home', 'about', 'projects', 'certificates', 'contact']; // Agregada 'certificates'
-    const scrollPosition = window.scrollY + 80;
+      const sections = ['home', 'about', 'projects', 'certificates', 'contact'];
+      const scrollPosition = window.scrollY + 80;
 
-    for (const section of sections) {
-      const element = document.getElementById(section);
-      if (element) {
-        const offsetTop = element.offsetTop;
-        const offsetHeight = element.offsetHeight;
-
-        if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-          setActiveSection(section);
-          break;
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
         }
       }
-    }
-  };
+    };
 
-  window.addEventListener('scroll', handleScroll);
-  return () => window.removeEventListener('scroll', handleScroll);
-}, []);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  // Variants para animaciones secuenciales
   const containerVariants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
     }
   };
 
@@ -58,24 +56,7 @@ const Header = () => {
     show: {
       opacity: 1,
       y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 20
-      }
-    }
-  };
-
-  // Efecto de pulso para el punto decorativo
-  const pulseDot = {
-    animate: {
-      scale: [1, 1.15, 1],
-      opacity: [0.7, 1, 0.7],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
+      transition: { type: 'spring', stiffness: 300, damping: 20 }
     }
   };
 
@@ -88,17 +69,10 @@ const Header = () => {
           whileTap={{ scale: 0.95 }}
           transition={{ type: 'spring', stiffness: 400, damping: 17 }}
         >
-          <Link
-            to="home"
-            smooth={true}
-            duration={500}
-            className="logo-link"
-          >
+          <Link to="home" smooth={true} duration={500} className="logo-link">
             <span className="logo-text">
               Adrian<span className="logo-highlight">Iza</span>
             </span>
-
-
           </Link>
         </motion.div>
 
@@ -134,7 +108,7 @@ const Header = () => {
                         type: 'spring',
                         stiffness: 300,
                         damping: 20,
-                        ease: [0.43, 0.13, 0.23, 0.96] // Curva Bezier personalizada
+                        ease: [0.43, 0.13, 0.23, 0.96]
                       }}
                     />
                   )}
@@ -153,9 +127,10 @@ const Header = () => {
             whileTap={{ scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
           >
-            Currículum
+            {t('header.cv')}
           </motion.a>
 
+          <LanguageToggle />
           <ThemeToggle />
         </div>
       </div>

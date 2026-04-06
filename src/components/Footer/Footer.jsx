@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import './Footer.css';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -11,13 +14,13 @@ const Footer = () => {
             <span className="logo-dot">.</span>
           </div>
           <div className="footer-links">
-            <a href="#home">Inicio</a>
-            <a href="#about">Sobre mí</a>
-            <a href="#projects">Proyectos</a>
-            <a href="#contact">Contacto</a>
+            <a href="#home">{t('footer.home')}</a>
+            <a href="#about">{t('footer.about')}</a>
+            <a href="#projects">{t('footer.projects')}</a>
+            <a href="#contact">{t('footer.contact')}</a>
           </div>
           <div className="footer-copyright">
-            <p>&copy; {new Date().getFullYear()} Adrian Iza. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} Adrian Iza. {t('footer.rights')}</p>
           </div>
         </div>
       </div>

@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "contact": "Contact"
+  },
+  "header": {
+    "cv": "Resume"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "jobTitle": "Software Engineer",
+    "typingText1": "Web Developer",
+    "typingText2": "Backend Developer & PM",
+    "ctaProjects": "View projects",
+    "ctaContact": "Contact"
+  },
+  "about": {
+    "sectionTitle": "About Me",
+    "tags": ["Full Stack", "Backend", "Fintech", "Microservices", "DBA"],
+    "intro": "Software Engineer with experience in the business and financial sector, I develop software solutions designed to grow, scale, and generate real business impact. I have experience in demanding environments where stability, performance, and operational continuity are critical. I have worked on the modernization of complex systems, transforming legacy platforms into modern solutions. My focus is clear: deliver solid software, from scalable systems to implementations focused on efficiently solving specific problems.",
+    "stats": [
+      { "value": "2+", "label": "years of experience" },
+      { "value": "2",  "label": "sectors: fintech & tech" }
+    ],
+    "valueProps": [
+      {
+        "icon": "🏦",
+        "title": "Fintech & Stock Exchange Systems",
+        "description": "Financial APIs with ASP.NET and platform modernization, migration from SOAP legacy to .NET Core with critical business rules."
+      },
+      {
+        "icon": "⚡",
+        "title": "Microservices & Async Messaging",
+        "description": "Decoupled architectures with Node.js and FastAPI. Communication via RabbitMQ, containerization with Docker and deployment on Railway."
+      },
+      {
+        "icon": "🌐",
+        "title": "Cross-Platform Full Stack",
+        "description": "Backend in C#/.NET, Node.js, and Python. Frontends with Blazor, .NET MAUI, and React — web, desktop, and mobile from a single technical profile."
+      },
+      {
+        "icon": "🔴",
+        "title": "Real-Time Systems",
+        "description": "WebSockets + Redis + MongoDB for session management and instant messaging. Secure authentication with JWT and bcrypt."
+      },
+      {
+        "icon": "📋",
+        "title": "Technical Project Management",
+        "description": "Team leadership with Scrum and Kanban in real projects. Sprint planning in Jira, tracking in Trello, and versioning with TFS."
+      }
+    ],
+    "skills": {
+      "title": "My Skills"
+    },
+    "timeline": {
+      "title": "My Education",
+      "items": [
+        {
+          "year": "2011-2017",
+          "title": "High School Diploma in General Sciences",
+          "institution": "Unidad Educativa Particular \"Santa Ana\"",
+          "description": "General Sciences"
+        },
+        {
+          "year": "2020-2024",
+          "title": "English B1",
+          "institution": "Universidad de las Fuerzas Armadas ESPE"
+        },
+        {
+          "year": "2019-2025",
+          "title": "Software Engineering Degree",
+          "institution": "Universidad de las Fuerzas Armadas ESPE",
+          "description": "Focus on distributed systems, software architecture, data analysis, and agile methodologies"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "sectionTitle": "My Projects",
+    "preview": "Live Preview",
+    "viewProject": "View Project",
+    "code": "Code",
+    "prevImage": "Previous image",
+    "nextImage": "Next image",
+    "goToImage": "Go to image",
+    "items": [
+      {
+        "title": "Microservices Communication System with RabbitMQ",
+        "description": "Decoupled microservices system that uses RabbitMQ for asynchronous communication between services."
+      },
+      {
+        "title": "Real-Time Chat Platform",
+        "description": "Complete instant messaging system with chat rooms, secure authentication, and real-time user status. Scalable architecture combining REST API with WebSockets for an interactive experience, using Redis for session management and MongoDB for data persistence."
+      },
+      {
+        "title": "Cybersecurity Lab Access Management System",
+        "description": "Microservices-based user management system that enables secure, controlled, and scalable access to a virtual cybersecurity laboratory. The system authenticates and authorizes users, manages active sessions, and controls access to simulated vulnerable environments designed for educational practices, implemented with Node.js and Express.js on the backend, managed under the Scrum agile methodology. The lab connects through a network infrastructure with a MikroTik router and VPN on Ubuntu Server."
+      }
+    ]
+  },
+  "certificates": {
+    "sectionTitle": "My Certificates",
+    "subtitle": "Certifications that validate my skills and knowledge",
+    "verified": "✓ Verified",
+    "viewDetails": "View details",
+    "viewBadge": "View validated badge",
+    "dateLabel": "Date:",
+    "categoryLabel": "Category:",
+    "items": [
+      {
+        "title": "Remote Work Certificate",
+        "description": "Remote Work Certificate: skills in remote collaboration, communication optimization, and digital productivity.",
+        "category": "Remote Work"
+      },
+      {
+        "title": "Scrum Certificate",
+        "description": "Certification in agile methodologies with a focus on Scrum, with practical knowledge of project management, Scrum roles, sprint planning, and continuous improvement to lead and collaborate in development teams.",
+        "category": "Agile Methodologies"
+      },
+      {
+        "title": "Backend Developer and APIs Certificate",
+        "description": "Backend Developer and APIs certificate in JavaScript.",
+        "category": "Backend Development"
+      },
+      {
+        "title": "Python for Data Science Certificate",
+        "description": "Certificate by IBM in Python applied to Data Science.",
+        "category": "Data Analysis"
+      }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Contact",
+    "heading": "Let's Talk!",
+    "description": "If you have a project in mind or want to collaborate, don't hesitate to reach out.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending. Please try again."
+    }
+  },
+  "footer": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  }
+}

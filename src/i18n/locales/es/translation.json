@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "certificates": "Certificados",
+    "contact": "Contacto"
+  },
+  "header": {
+    "cv": "Currículum"
+  },
+  "home": {
+    "greeting": "Hola, yo soy",
+    "jobTitle": "Ingeniero en Software",
+    "typingText1": "Web Developer",
+    "typingText2": "Backend Developer & PM",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Contacto"
+  },
+  "about": {
+    "sectionTitle": "Sobre Mí",
+    "tags": ["Full Stack", "Backend", "Fintech", "Microservicios", "DBA"],
+    "intro": "Ingeniero en Software con experiencia en el ámbito empresarial y financiero, desarrollo soluciones de software pensadas para crecer, escalar y generar impacto real en el negocio. Tengo experiencia en entornos exigentes, donde la estabilidad, el rendimiento y la continuidad operativa son críticos. He trabajado en la modernización de sistemas complejos, transformando plataformas legacy en soluciones modernas. Mi enfoque es claro: entregar software sólido, desde sistemas escalables hasta implementaciones enfocadas en resolver problemáticas específicas de forma eficiente.",
+    "stats": [
+      { "value": "2+", "label": "años de experiencia" },
+      { "value": "2",  "label": "sectores: fintech & tech" }
+    ],
+    "valueProps": [
+      {
+        "icon": "🏦",
+        "title": "Fintech & Sistemas Bursátiles",
+        "description": "APIs financieras con ASP.NET y modernización de plataforma, migración SOAP legacy a .NET Core con reglas de negocio críticas."
+      },
+      {
+        "icon": "⚡",
+        "title": "Microservicios & Mensajería Asíncrona",
+        "description": "Arquitecturas desacopladas con Node.js y FastAPI. Comunicación vía RabbitMQ, contenerización con Docker y despliegue en Railway."
+      },
+      {
+        "icon": "🌐",
+        "title": "Full Stack Multiplataforma",
+        "description": "Backend en C#/.NET, Node.js y Python. Frontends con Blazor, .NET MAUI y React — web, escritorio y móvil desde un solo perfil técnico."
+      },
+      {
+        "icon": "🔴",
+        "title": "Sistemas en Tiempo Real",
+        "description": "WebSockets + Redis + MongoDB para gestión de sesiones y mensajería instantánea. Autenticación segura con JWT y bcrypt."
+      },
+      {
+        "icon": "📋",
+        "title": "Gestión de Proyectos Técnicos",
+        "description": "Liderazgo de equipos con Scrum y Kanban en proyectos reales. Planificación de sprints en Jira, seguimiento en Trello y versionamiento con TFS."
+      }
+    ],
+    "skills": {
+      "title": "Mis Habilidades"
+    },
+    "timeline": {
+      "title": "Mi Educación",
+      "items": [
+        {
+          "year": "2011-2017",
+          "title": "Bachillerato en Ciencias Generales",
+          "institution": "Unidad Educativa Particular \"Santa Ana\"",
+          "description": "Ciencias Generales"
+        },
+        {
+          "year": "2020-2024",
+          "title": "Inglés B1",
+          "institution": "Universidad de las Fuerzas Armadas ESPE"
+        },
+        {
+          "year": "2019-2025",
+          "title": "Ingeniería en Software",
+          "institution": "Universidad de las Fuerzas Armadas ESPE",
+          "description": "Enfoque en sistemas distribuidos, arquitectura de software, Análisis de Datos y metodologías ágiles"
+        }
+      ]
+    }
+  },
+  "projects": {
+    "sectionTitle": "Mis Proyectos",
+    "preview": "Vista Previa",
+    "viewProject": "Ver Proyecto",
+    "code": "Código",
+    "prevImage": "Imagen anterior",
+    "nextImage": "Siguiente imagen",
+    "goToImage": "Ir a imagen",
+    "items": [
+      {
+        "title": "Sistema de Comunicación entre Microservicios con RabbitMQ",
+        "description": "Sistema de microservicios desacoplados que utiliza RabbitMQ para la comunicación asíncrona entre servicios."
+      },
+      {
+        "title": "Plataforma de Chat en Tiempo Real",
+        "description": "Sistema completo de mensajería instantánea con salas de chat, autenticación segura y estado de usuarios en tiempo real. Arquitectura escalable que combina REST API con WebSockets para una experiencia interactiva, implementando Redis para gestión de sesiones y MongoDB para persistencia de datos."
+      },
+      {
+        "title": "Sistema de Gestión de Acceso a Laboratorio de Ciberseguridad",
+        "description": "Sistema de gestión de usuarios basado en microservicios que permite el acceso seguro, controlado y escalable a un laboratorio virtual de ciberseguridad. El sistema autentica y autoriza usuarios, gestiona sesiones activas y controla el acceso a entornos vulnerables simulados, diseñados para prácticas educativas, implementado con Node.js y Express.js en el backend, y gestionado bajo la metodología ágil Scrum. El laboratorio se conecta a través de una infraestructura de red con router MikroTik y VPN en Ubuntu Server."
+      }
+    ]
+  },
+  "certificates": {
+    "sectionTitle": "Mis Certificados",
+    "subtitle": "Certificaciones que validan mis habilidades y conocimientos",
+    "verified": "✓ Verificado",
+    "viewDetails": "Ver detalles",
+    "viewBadge": "Ver insignia validada",
+    "dateLabel": "Fecha:",
+    "categoryLabel": "Categoría:",
+    "items": [
+      {
+        "title": "Certificado Remote Work",
+        "description": "Remote Work Certificate: habilidades en colaboración remota, optimización de comunicación y productividad digital.",
+        "category": "Trabajo Remoto"
+      },
+      {
+        "title": "Certificado Scrum",
+        "description": "Certificación en metodologías ágiles con enfoque en Scrum, con conocimientos prácticos sobre gestión de proyectos, roles de Scrum, planificación de sprints y mejora continua, para liderar y colaborar en equipos de desarrollo.",
+        "category": "Metodologías Ágiles"
+      },
+      {
+        "title": "Certificado de Backend Developer and APIs",
+        "description": "Certificado de Backend Developer and APIs en JavaScript.",
+        "category": "Desarrollo Backend"
+      },
+      {
+        "title": "Certificado Python for Data Science",
+        "description": "Certificado por IBM en Python aplicado a la Ciencia de Datos.",
+        "category": "Análisis de Datos"
+      }
+    ]
+  },
+  "contact": {
+    "sectionTitle": "Contacto",
+    "heading": "¡Hablemos!",
+    "description": "Si tienes un proyecto en mente o quieres colaborar, no dudes en contactarme.",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Error al enviar. Inténtalo de nuevo."
+    }
+  },
+  "footer": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados."
+  },
+  "theme": {
+    "light": "Modo Claro",
+    "dark": "Modo Oscuro"
+  }
+}

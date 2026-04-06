@@ -1,0 +1,58 @@
+.language-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  transition: background 0.3s cubic-bezier(0.43, 0.13, 0.23, 0.96),
+              box-shadow 0.3s cubic-bezier(0.43, 0.13, 0.23, 0.96);
+  will-change: transform;
+  font-family: inherit;
+}
+
+.language-toggle:hover {
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.lang-active {
+  color: var(--primary-color);
+  display: inline-block;
+}
+
+.lang-divider {
+  color: rgba(255, 255, 255, 0.25);
+  font-weight: 300;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.lang-inactive {
+  color: rgba(255, 255, 255, 0.38);
+  font-weight: 500;
+}
+
+/* Light theme adaptation */
+.light-theme .language-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .language-toggle:hover {
+  background: rgba(0, 0, 0, 0.09);
+}
+
+.light-theme .lang-divider {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.light-theme .lang-inactive {
+  color: rgba(22, 33, 62, 0.35);
+}

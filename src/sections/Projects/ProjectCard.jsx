@@ -1,47 +1,36 @@
-//import React from 'react';
 import React, { useState } from 'react';
-
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import './Projects.css';
 import project2 from '../../assets/images/project-2.png';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-
 
 const images = {
-  //1: project1,
-  2: project2,
-  //3: project3
+  2: project2
 };
 
-
 const cardVariants = {
-  offscreen: {
-    y: 50,
-    opacity: 0
-  },
+  offscreen: { y: 50, opacity: 0 },
   onscreen: {
     y: 0,
     opacity: 1,
-    transition: {
-      type: "spring",
-      bounce: 0.4,
-      duration: 0.8
-    }
+    transition: { type: 'spring', bounce: 0.4, duration: 0.8 }
   }
 };
 
 const ProjectCard = ({ project }) => {
+  const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+    setCurrentImageIndex((prev) =>
+      prev === project.images.length - 1 ? 0 : prev + 1
     );
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => 
-      prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+    setCurrentImageIndex((prev) =>
+      prev === 0 ? project.images.length - 1 : prev - 1
     );
   };
 
@@ -50,64 +39,53 @@ const ProjectCard = ({ project }) => {
       className="project-card"
       initial="offscreen"
       whileInView="onscreen"
-      viewport={{ margin: "-50px 0px -100px 0px" }}
+      viewport={{ margin: '-50px 0px -100px 0px' }}
       variants={cardVariants}
       whileHover={{
         y: -5,
-        boxShadow: "0 15px 30px -5px rgba(108, 99, 255, 0.3)",
-        transition: { type: "spring", stiffness: 300 }
+        boxShadow: '0 15px 30px -5px rgba(108, 99, 255, 0.3)',
+        transition: { type: 'spring', stiffness: 300 }
       }}
     >
       <motion.div
         className="project-image-container"
         whileHover={{ scale: 1.02 }}
-        transition={{ type: "spring", stiffness: 200, damping: 10 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 10 }}
       >
         <div className="project-image">
           <motion.img
             src={`/portafolio-adrian/assets/images/${project.images[currentImageIndex]}`}
-            alt={`${project.title} - Imagen ${currentImageIndex + 1}`}
+            alt={`${project.title} - ${t('projects.preview')} ${currentImageIndex + 1}`}
             loading="lazy"
             initial={{ scale: 1 }}
             whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 200, damping: 10 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 10 }}
           />
-          
-          {/* Flechas de navegación */}
+
           {project.images.length > 1 && (
             <>
-              <button 
+              <button
                 className="carousel-arrow left-arrow"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  prevImage();
-                }}
-                aria-label="Imagen anterior"
+                onClick={(e) => { e.stopPropagation(); prevImage(); }}
+                aria-label={t('projects.prevImage')}
               >
                 <FiChevronLeft />
               </button>
-              <button 
+              <button
                 className="carousel-arrow right-arrow"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  nextImage();
-                }}
-                aria-label="Siguiente imagen"
+                onClick={(e) => { e.stopPropagation(); nextImage(); }}
+                aria-label={t('projects.nextImage')}
               >
                 <FiChevronRight />
               </button>
-              
-              {/* Indicadores de posición */}
+
               <div className="carousel-indicators">
                 {project.images.map((_, index) => (
                   <button
                     key={index}
                     className={`indicator ${index === currentImageIndex ? 'active' : ''}`}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setCurrentImageIndex(index);
-                    }}
-                    aria-label={`Ir a imagen ${index + 1}`}
+                    onClick={(e) => { e.stopPropagation(); setCurrentImageIndex(index); }}
+                    aria-label={`${t('projects.goToImage')} ${index + 1}`}
                   />
                 ))}
               </div>
@@ -118,26 +96,20 @@ const ProjectCard = ({ project }) => {
         <motion.div
           className="project-overlay"
           initial={{ opacity: 0 }}
-          whileHover={{
-            opacity: 1,
-            transition: { duration: 0.3, ease: "easeOut" }
-          }}
+          whileHover={{ opacity: 1, transition: { duration: 0.3, ease: 'easeOut' } }}
         >
           <motion.a
             href={project.link}
             className="preview-button"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Ver proyecto ${project.title}`}
+            aria-label={`${t('projects.preview')} ${project.title}`}
             initial={{ scale: 1 }}
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 5px 15px rgba(0, 0, 0, 0.3)"
-            }}
+            whileHover={{ scale: 1.05, boxShadow: '0 5px 15px rgba(0,0,0,0.3)' }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: 'spring', stiffness: 300 }}
           >
-            Vista Previa
+            {t('projects.preview')}
           </motion.a>
         </motion.div>
       </motion.div>
@@ -146,11 +118,11 @@ const ProjectCard = ({ project }) => {
         className="project-content"
         initial={{ y: 0 }}
         whileHover={{ y: -3 }}
-        transition={{ type: "spring", stiffness: 200 }}
+        transition={{ type: 'spring', stiffness: 200 }}
       >
         <motion.h3
           className="project-title"
-          whileHover={{ color: "var(--primary-dark)" }}
+          whileHover={{ color: 'var(--primary-dark)' }}
           transition={{ duration: 0.2 }}
         >
           {project.title}
@@ -166,45 +138,32 @@ const ProjectCard = ({ project }) => {
 
         <motion.div
           className="project-technologies"
-          whileHover={{
-            scale: 1.01,
-            transition: { staggerChildren: 0.05 }
-          }}
+          whileHover={{ scale: 1.01, transition: { staggerChildren: 0.05 } }}
         >
           {project.technologies.map((tech, index) => (
             <motion.span
               key={index}
               className="tech-tag"
               initial={{ scale: 1 }}
-              whileHover={{
-                scale: 1.1,
-                y: -3,
-                backgroundColor: "var(--primary-dark)"
-              }}
-              transition={{ type: "spring", stiffness: 400 }}
+              whileHover={{ scale: 1.1, y: -3, backgroundColor: 'var(--primary-dark)' }}
+              transition={{ type: 'spring', stiffness: 400 }}
             >
               {tech}
             </motion.span>
           ))}
         </motion.div>
 
-        <motion.div
-          className="project-links"
-          whileHover={{ scale: 1.01 }}
-        >
+        <motion.div className="project-links" whileHover={{ scale: 1.01 }}>
           <motion.a
             href={project.link}
             className="project-link"
             target="_blank"
             rel="noopener noreferrer"
-            whileHover={{
-              y: -3,
-              boxShadow: "0 8px 20px rgba(108, 99, 255, 0.4)"
-            }}
+            whileHover={{ y: -3, boxShadow: '0 8px 20px rgba(108, 99, 255, 0.4)' }}
             whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            transition={{ type: 'spring', stiffness: 300 }}
           >
-            Ver Proyecto
+            {t('projects.viewProject')}
           </motion.a>
 
           {project.code && (
@@ -213,14 +172,11 @@ const ProjectCard = ({ project }) => {
               className="code-link"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{
-                y: -3,
-                backgroundColor: "rgba(108, 99, 255, 0.2)"
-              }}
+              whileHover={{ y: -3, backgroundColor: 'rgba(108, 99, 255, 0.2)' }}
               whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              transition={{ type: 'spring', stiffness: 300 }}
             >
-              Código
+              {t('projects.code')}
             </motion.a>
           )}
         </motion.div>
